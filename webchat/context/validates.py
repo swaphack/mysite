@@ -1,20 +1,9 @@
 # -*- coding: utf-8 -*-
 import hashlib
-from webchat import config
-from webchat.context import tool
-
 from django.http import HttpResponse
 
-
-#验证基类
-class Validate(object):
-	"""docstring for Validate"""
-	def __init__(self):
-		super(Validate, self).__init__()
-
-	# 验证
-	def valid(self):
-		pass
+from webchat import config
+from utility.classes import Validate
 
 #http验证
 class HttpValidate(Validate):

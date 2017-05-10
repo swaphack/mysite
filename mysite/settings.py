@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+from mysite.config import LOCAL_DEBUG, SERVER_IP, HTTP_URL
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +27,10 @@ SECRET_KEY = 'w#hqydi50-rod*cem8(*e^jd)ow#$_$2c(=6kn9^z=^tbrpg(5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+if LOCAL_DEBUG == True:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = [SERVER_IP]
 
 
 # Application definition
@@ -37,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webchat'
+    'webchat',
+    'shop'
 ]
 
 MIDDLEWARE = [
@@ -73,19 +79,32 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'webchat',
-        'USER' : 'root',
-        'PASSWORD' : '123456',
-        'HOST' : '',
-        'PORT' : '',
+if LOCAL_DEBUG == True:
+    DATABASES = {
+        'default': {
+            #'ENGINE': 'django.db.backends.sqlite3',
+            #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE' : 'django.db.backends.mysql',
+            'NAME' : 'webchat',
+            'USER' : 'root',
+            'PASSWORD' : '123456',
+            'HOST' : '',
+            'PORT' : '',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            #'ENGINE': 'django.db.backends.sqlite3',
+            #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE' : 'django.db.backends.mysql',
+            'NAME' : 'webchat',
+            'USER' : 'root',
+            'PASSWORD' : '123456',
+            'HOST' : '10.66.235.153',
+            'PORT' : '3306',
+        }
+    }
 
 
 # Password validation
@@ -125,3 +144,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR , 'static').replace('\\','/') 
+STATIC_DIR = HTTP_URL + 'static/'
+
+STATICFILES_DIRS = ()
+
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') 

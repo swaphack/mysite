@@ -3,13 +3,18 @@ from __future__ import unicode_literals
 
 from django.http import HttpResponse
 from webchat.context import validates
-from webchat.context.tool import response_error_result
+from utility.response import response_error_result
 
 
 ##########################################################
+from webchat.config import WEBCHAT_VALIDATE
+
 #验证是否通过app
 def validate(request):
 	#服务器识别
+	if WEBCHAT_VALIDATE != True:
+		return response_error_result(request)
+
 	valid = validates.SignatureValidate(request)
 	if valid.valid() == True:
 		result = valid.getEchostr()
@@ -18,28 +23,9 @@ def validate(request):
 	return response_error_result(request)
 
 ##########################################################
-from webchat.context.center import CenterServer
-
-global g_CenterServer
-g_CenterServer = None
-
-# 开启服务器
-def run(request):
-	global g_CenterServer
-	if g_CenterServer == None:
-		g_CenterServer = CenterServer()
-		g_CenterServer.getAccessToken(request)
-
-	return g_CenterServer.dispatch(request)
+from utility.globals import get_center_server
+# 派发操作
+def index(request):
+	return get_center_server(request).dispatchOperator(request)
 
 ##########################################################
-
-#微信功能验证
-WEBCHAT_VALIDATE = False
-
-
-def index(request):
-	if WEBCHAT_VALIDATE == True:
-		return validate(request)
-	else:
-		return run(request)

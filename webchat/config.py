@@ -11,6 +11,9 @@ TOKEN = "jifueiw1121ljdfiae1"
 
 EncodingAESKey = "0lmsuNSNRUORCb388vPDPZpuV94TByPrXtaEzfsgh28"
 
+#微信功能验证
+WEBCHAT_VALIDATE = False
+
 # 微信操作标识
 WEBCHAT_OPERATOR_MARK = 'action'
 # 微信操作处理
@@ -24,6 +27,3 @@ WEBCHAT_URL = {
 	WEBCHAT_OPERATOR[0] : "https://api.weixin.qq.com/cgi-bin/token",
 	WEBCHAT_OPERATOR[1] : "https://api.weixin.qq.com/cgi-bin/getcallbackip",
 }
-
-
-SHOW_PRINT = True

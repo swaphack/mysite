@@ -2,14 +2,11 @@
 
 import threading
 
-from webchat.context.tool import log, \
-	get_request_method, \
-	response_error_result, \
-	response_list_result
+from utility.tool import get_request_method, log
+from utility.response import response_error_result, response_list_result, response_msg_result
 
 from webchat.config import WEBCHAT_OPERATOR_MARK, WEBCHAT_OPERATOR
 from webchat.context.infos import AccessToken, AccessServerList
-
 
 # 中心服务器
 class CenterServer(object):
@@ -37,6 +34,8 @@ class CenterServer(object):
 			timer = threading.Timer(handler.getExpiresIn(), self.getAccessToken)
 			timer.start()
 
+		return response_msg_result(request, self.access_token)
+
 	#获取服务器列表
 	def getServerList(self, request):
 		log('================Get Server List================')
@@ -49,8 +48,8 @@ class CenterServer(object):
 		return response_list_result(request, serverList)
 
 
-	#派发消息
-	def dispatch(self, request):
+	#派发操作消息
+	def dispatchOperator(self, request):
 		method = get_request_method(request)
 		mark = method.get(WEBCHAT_OPERATOR_MARK, None)
 		if mark != None:
