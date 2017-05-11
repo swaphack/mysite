@@ -100,3 +100,25 @@ class Validate(object):
 		pass
 
 ####################################################################
+# 派发
+class Dispather(object):
+	"""docstring for Dispather"""
+	def __init__(self, url, handler):
+		super(Dispather, self).__init__()
+		self.url = url
+		self.handler = handler
+
+	# 派发处理
+	def dispatch(self, url, arg):
+		if self.url == url:
+			if self.handler != None:
+				return self.handler(arg)
+
+		return None
+
+# 创建一个派发
+def patch(url, handler):
+	return Dispather(url, handler)
+
+####################################################################
+		
