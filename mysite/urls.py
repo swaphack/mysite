@@ -26,7 +26,7 @@ import webchat.views
 import mysite.view
 
 urlpatterns = [
-    url(r'^static/', serve, {'document_root': STATIC_ROOT}),
+    #url(r'^static/', serve, {'document_root': STATIC_ROOT}),
     url(r'^admin/', admin.site.urls),
     url(r'^shop/', shop.views.index),
     url(r'^webchat/', webchat.views.index),

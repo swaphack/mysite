@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #是否是本地调试版本，如果不是，则是发布版本
 LOCAL_DEBUG = True
 

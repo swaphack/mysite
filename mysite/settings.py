@@ -62,7 +62,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR + "/templates"],
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -100,7 +100,7 @@ else:
             'ENGINE' : 'django.db.backends.mysql',
             'NAME' : 'webchat',
             'USER' : 'root',
-            'PASSWORD' : '123456',
+            'PASSWORD' : 'lg85651239',
             'HOST' : '10.66.235.153',
             'PORT' : '3306',
         }
@@ -143,11 +143,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# static url
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR , 'static').replace('\\','/') 
-STATIC_DIR = HTTP_URL + 'static/'
+# static resource root
+STATIC_ROOT = os.path.join(BASE_DIR,'statics')
+# copy src static files to statics dir
+STATICFILES_DIRS = (
+    ('shop', os.path.join(BASE_DIR, 'shop/static_assets')),
+)
 
-STATICFILES_DIRS = ()
+MEDIA_URL = '/uploads/' 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads').replace('\\', '/') 
 
-MEDIA_URL = '/media/' 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/') 
+
+TEMPLATES_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates')
+)
+
+print('BASE_DIR %s' % BASE_DIR)

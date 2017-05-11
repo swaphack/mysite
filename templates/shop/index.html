@@ -4,6 +4,7 @@
 Although you can use them, for a more unique website, replace these images with your own. -->
 <html lang="en">
 <head>
+	{% load staticfiles %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +13,10 @@ Although you can use them, for a more unique website, replace these images with 
     <title>{{title}}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{root}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'shop/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
-    <link href="{{root}}css/custom.css" rel="stylesheet">
+    <link href="{% static 'shop/css/custom.css' %}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -128,7 +129,7 @@ Although you can use them, for a more unique website, replace these images with 
 			<div class="col-sm-6 col-md-3">
 				<div class="thumbnail featured-product">
 					<a href="#">
-						<img src="{{root}}images/1.png" alt="">
+						<img src="{% static 'shop/images/pepper.jpg' %}" alt="">
 					</a>
 					<div class="caption">
 						<h3>Premium Niche</h3>
@@ -153,7 +154,7 @@ Although you can use them, for a more unique website, replace these images with 
 			<div class="col-sm-6 col-md-3">
 				<div class="thumbnail featured-product">
 					<a href="#">
-						<img src="{{root}}images/jars.jpg" alt="">
+						<img src="{% static 'shop/images/jars.jpg' %}" alt="">
 					</a>
 					<div class="caption">
 						<h3>Handy Holistic</h3>
@@ -178,7 +179,7 @@ Although you can use them, for a more unique website, replace these images with 
 			<div class="col-sm-6 col-md-3">
 				<div class="thumbnail featured-product">
 					<a href="#">
-						<img src="{{root}}images/pot.jpg" alt="">
+						<img src="{% static 'shop/images/pot.jpg' %}" alt="">
 					</a>
 					<div class="caption">
 						<h3>Seamless Strategic</h3>
@@ -203,7 +204,7 @@ Although you can use them, for a more unique website, replace these images with 
 			<div class="col-sm-6 col-md-3">
 				<div class="thumbnail featured-product">
 					<a href="#">
-						<img src="{{root}}images/teapot.jpg" alt="">
+						<img src="{% static 'shop/images/teapot.jpg' %}" alt="">
 					</a>
 					<div class="caption">
 						<h3>Maintained Strip</h3>
@@ -230,7 +231,7 @@ Although you can use them, for a more unique website, replace these images with 
 	<div class="container text-center">
 		<h1>Unparalleled Service</h1>
 		<p class="lead">Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing. Holistically pontificate installed base portals after maintainable products without collateral.</p>
-		<img class="img-responsive img-circle center-block" src="{{root}}images/service.jpg" alt="">
+		<img class="img-responsive img-circle center-block" src="{% static 'shop/images/service.jpg' %}" alt="">
 	</div><!--/.container-->
 	
 		
@@ -306,13 +307,13 @@ Although you can use them, for a more unique website, replace these images with 
 
 	
     <!-- jQuery -->
-    <script src="{{root}}js/jquery-1.11.3.min.js"></script>
+    <script src="{% static 'shop/js/jquery-1.11.3.min.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{root}}js/bootstrap.min.js"></script>
+    <script src="{% static 'shop/js/bootstrap.min.js' %}"></script>
 	
 	<!-- IE10 viewport bug workaround -->
-	<script src="{{root}}js/ie10-viewport-bug-workaround.js"></script>
+	<script src="{% static 'shop/js/ie10-viewport-bug-workaround.js' %}"></script>
 	
 </body>
 

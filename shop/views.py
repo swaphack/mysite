@@ -8,7 +8,7 @@ from utility.tool import get_request_method
 from shop.config import SHOP_OPERATOR_MARK, SHOP_URL, WEBCHAT_OPERATOR
 from shop.models import Mommodity
 
-from mysite.settings import STATIC_URL,STATIC_DIR
+from mysite.settings import STATIC_URL
 from mysite.config import HTTP_URL
 
 # Create your views here.
@@ -47,7 +47,6 @@ def response_item_info(request, method):
 def response_home_page(request):
 	url = 'shop/index.html'
 	content = {
-		'root' : STATIC_DIR,
 		'title' : 'Home'
 	}
 	return render(request, url, content)
