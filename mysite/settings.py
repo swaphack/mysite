@@ -61,8 +61,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + "/templates"],
-        'APP_DIRS': False,
+        'DIRS': [BASE_DIR + "/templates"], # project templates
+        'APP_DIRS': True, # if True, use each app templates dir
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -146,18 +146,19 @@ USE_TZ = True
 # static url
 STATIC_URL = '/static/'
 # static resource root
-STATIC_ROOT = os.path.join(BASE_DIR,'statics')
+STATIC_ROOT = os.path.join(BASE_DIR,'statics').replace('\\', '/')
 # copy src static files to statics dir
 STATICFILES_DIRS = (
-    ('shop', os.path.join(BASE_DIR, 'shop/static_assets')),
+    ('shop', os.path.join(BASE_DIR, 'shop/static_assets').replace('\\', '/')),
+    ('sample', os.path.join(BASE_DIR, 'sample/static_assets').replace('\\', '/')),
 )
 
 MEDIA_URL = '/uploads/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads').replace('\\', '/') 
 
 
-TEMPLATES_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates')
-)
+TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates').replace('\\', '/')
 
-print('BASE_DIR %s' % BASE_DIR)
+TEMPLATES_DIRS = (
+   os.path.join(BASE_DIR, 'templates').replace('\\', '/')
+)

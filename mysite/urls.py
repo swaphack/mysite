@@ -15,23 +15,24 @@ Including another URLconf
 """
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import staticfiles
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
 
-from django.views.static import serve
-from mysite.settings import STATIC_ROOT
 
-import shop.views
-import webchat.views
 import mysite.view
 
+from sample.urls import sample_urlpatterns
+from shop.urls import shop_urlpatterns
+from webchat.urls import webchat_urlpatterns
+
 urlpatterns = [
-    #url(r'^static/', serve, {'document_root': STATIC_ROOT}),
-    url(r'^admin/', admin.site.urls),
-    url(r'^shop/', shop.views.index),
-    url(r'^webchat/', webchat.views.index),
-    url(r'^$',  mysite.view.index),
+    url(r'^admin/', admin.site.urls, name='admin'),
+    url(r'^$',  mysite.view.index, name='index'),
 ]
+
+urlpatterns += webchat_urlpatterns()
+urlpatterns += sample_urlpatterns()
+urlpatterns += shop_urlpatterns()
 
 urlpatterns += staticfiles_urlpatterns()
 
