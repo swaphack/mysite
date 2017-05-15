@@ -15,6 +15,7 @@ print('SAMPLE_STATIC_ROOT %s' % SAMPLE_STATIC_ROOT)
 
 def sample_urlpatterns():
 	patterns = [
+		url(r'^sample/static/(?P<path>.*)$', serve, {'document_root' : STATIC_ROOT}),
 		url(r'^sample/$', sample.views.index),
     	url(r'^sample/(?P<path>.*)$', serve, {'document_root' : SAMPLE_STATIC_ROOT}, name='sample'),
 	]

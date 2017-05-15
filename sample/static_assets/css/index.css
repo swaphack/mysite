@@ -1,0 +1,63 @@
+body {
+	vertical-align: center;
+	background: white;
+	font-family: sans-serif;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+h1 {
+	color: black;
+	border-bottom: 1px solid black
+}
+
+h2 {
+	color: black;
+	font-weight: bold;
+	line-height: 0px;
+}
+
+p {
+	color: green;
+	width: 100%;
+}
+
+.green {
+	color: green;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.white {
+	color: white;
+}
+
+.title {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.catalog {
+	float: left;
+	width: 20%;
+	margin: 0;
+	padding: 0;
+	background: gray;
+}
+
+.section {
+	position: absolute;
+	left: 22%;
+	width: 40%;
+	border: 1px dotted gray;
+	padding: 10px 10px 10px 10px;
+	background: red;
+}
+
+.search {
+	float: right;
+	background: blue;
+}
+

@@ -16,16 +16,19 @@ Including another URLconf
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import staticfiles
 from django.conf.urls import url
+from django.views.static import serve
 from django.contrib import admin
 
 
 import mysite.view
+from mysite.settings import STATIC_ROOT
 
 from sample.urls import sample_urlpatterns
 from shop.urls import shop_urlpatterns
 from webchat.urls import webchat_urlpatterns
 
 urlpatterns = [
+	url(r'^static/(?P<path>.*)$', serve, {'document_root' : STATIC_ROOT}),
     url(r'^admin/', admin.site.urls, name='admin'),
     url(r'^$',  mysite.view.index, name='index'),
 ]

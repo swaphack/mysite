@@ -146,7 +146,7 @@ USE_TZ = True
 # static url
 STATIC_URL = '/static/'
 # static resource root
-STATIC_ROOT = os.path.join(BASE_DIR,'statics').replace('\\', '/')
+STATIC_ROOT = os.path.join(BASE_DIR,'static').replace('\\', '/')
 # copy src static files to statics dir
 STATICFILES_DIRS = (
     ('shop', os.path.join(BASE_DIR, 'shop/static_assets').replace('\\', '/')),
