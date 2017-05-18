@@ -1,0 +1,44 @@
+div {
+	border-width: thin;
+	border-color: black;
+	border-style: solid;
+}
+
+.main {
+	height: 200px;
+	background-color: black;
+}
+
+.left {
+	float: left;
+	left: 0px;
+	width: calc(33.3% - 2px);
+	height: calc(100% - 2px);
+	margin: 0px;
+	padding: 0px;
+	border-width: 1px;
+	background-color: red;
+}
+
+.mid 
+{
+	float: left;
+	left: 33.3%;
+	width: calc(33.3% - 2px);
+	height: calc(100% - 2px);
+	margin: 0px;
+	padding: 0px;
+	border-width: 1px;
+	background-color: green;
+}
+
+.right {
+	float: left;
+	left: 66.6%;
+	width: calc(33.3% - 2px);
+	height: calc(100% - 2px);
+	margin: 0px;
+	padding: 0px;
+	border-width: 1px;
+	background-color: blue;
+}

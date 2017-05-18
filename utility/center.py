@@ -5,8 +5,9 @@ import threading
 from utility.tool import get_request_method, log
 from utility.response import response_error_result, response_list_result, response_msg_result
 
-from webchat.config import WEBCHAT_OPERATOR_MARK, WEBCHAT_OPERATOR
+from webchat.settings import WEBCHAT_OPERATOR_MARK, WEBCHAT_OPERATOR
 from webchat.context.infos import AccessToken, AccessServerList
+
 
 # 中心服务器
 class CenterServer(object):
@@ -21,17 +22,28 @@ class CenterServer(object):
 			WEBCHAT_OPERATOR[1] : self.getServerList,
 		}
 
-	# 获取凭证
-	def getAccessToken(self, request):
+	# 请求凭证
+	def request_access_token(self):
 		log('================Access Token================')
 		handler = AccessToken()
 		if handler.access() == False:
 			return
 
-		self.access_token = handler.getAccessToken()
-		log ("access_token %s" % self.access_token)
-		if self.access_token != None:
-			timer = threading.Timer(handler.getExpiresIn(), self.getAccessToken)
+		access_token = handler.getAccessToken()
+		expiresIn = handler.getExpiresIn()
+		log ("access_token %s" % access_token)
+		log ("left time %d" % expiresIn)
+
+		self.access_token = access_token
+
+		return (access_token, expiresIn)
+
+	# 获取凭证
+	def getAccessToken(self, request):
+		access_token, expiresIn = self.request_access_token()
+
+		if access_token != None:
+			timer = threading.Timer(expiresIn, self.request_access_token)
 			timer.start()
 
 		return response_msg_result(request, self.access_token)

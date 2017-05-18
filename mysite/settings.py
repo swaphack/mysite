@@ -157,8 +157,8 @@ MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads').replace('\\', '/') 
 
 
-TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates').replace('\\', '/')
+#TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates').replace('\\', '/')
 
-TEMPLATES_DIRS = (
-   os.path.join(BASE_DIR, 'templates').replace('\\', '/')
-)
+#TEMPLATES_DIRS = (
+#   os.path.join(BASE_DIR, 'templates').replace('\\', '/')
+#)

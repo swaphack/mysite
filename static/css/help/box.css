@@ -1,0 +1,67 @@
+{
+	border-color:black ;
+	border-width:1px;
+	border-style:solid;
+
+
+	border-top-color: black;
+	border-top-width: 1px;
+	border-top-style: none;
+}
+
+/*边框风格*/
+border-style: {
+	none,
+	solid,
+	double,
+	groove,
+	outset,
+	dotted,
+	dashed,
+	inset,
+	ridge;
+}
+
+
+/*补白*/
+{
+	padding: top right bottom left;
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+
+/*边界*/
+{
+	margin: top right bottom left;
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	margin-left: 1px;
+}
+
+/*背景*/
+{ 
+	background-image: url(1.jpg);
+	background-color: #542154;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+/*背景大小*/
+background-size: {
+	conver,
+	contain,
+	50px,
+	100%;
+}
+
+/*重复背景*/
+background-repeat: {
+	no-repeat,
+	repeat-x,
+	repeat-y,
+	repeat;
+}

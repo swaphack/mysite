@@ -1,0 +1,40 @@
+td, th {
+	border: 1px dotted black;
+	border-right: 0px;
+	border-top: 0px;
+}
+
+th {
+	background-color: #cc6600;
+}
+
+table {
+	caption-side: bottom;
+	border: 1px solid gray;
+	border-spacing: 5px 6px;
+	border-collapse:collapse;
+}
+
+caption {
+	font-style: italic;
+}
+
+.mid {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.cellcolor {
+	background-color: #fcba7a;
+}
+
+.inner {
+	text-align: center;
+}
+
+.inner th {
+	background-color: #fcba7a;
+}

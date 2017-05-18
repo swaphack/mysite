@@ -7,7 +7,7 @@ from utility.response import response_error_result
 
 
 ##########################################################
-from webchat.config import WEBCHAT_VALIDATE
+from webchat.settings import WEBCHAT_VALIDATE
 
 #验证是否通过app
 def validate(request):
@@ -26,6 +26,6 @@ def validate(request):
 from utility.globals import get_center_server
 # 派发操作
 def index(request):
-	return get_center_server(request).dispatchOperator(request)
+	return get_center_server().dispatchOperator(request)
 
 ##########################################################

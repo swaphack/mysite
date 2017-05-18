@@ -1,0 +1,22 @@
+/*悬浮流*/
+{
+	float: left;
+	position: relative;
+	left: 10px;
+}
+
+/*悬浮位置*/
+float : {
+	left,
+	right;
+}
+
+
+/*位置*/
+position : {
+	static, /*默认*/
+	fixed, /*固定*/
+	absolute, /*绝对*/
+	relative; /*相对*/
+}
+

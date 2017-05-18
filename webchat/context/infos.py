@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
 
-from webchat.config import APPID, AppSecret, TOKEN, WEBCHAT_URL,WEBCHAT_OPERATOR
+from webchat.settings import APPID, AppSecret, TOKEN, WEBCHAT_URL,WEBCHAT_OPERATOR
 from utility.tool import log
 from utility.classes import Info
 

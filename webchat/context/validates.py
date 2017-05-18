@@ -2,7 +2,6 @@
 import hashlib
 from django.http import HttpResponse
 
-from webchat import config
 from utility.classes import Validate
 
 #http验证

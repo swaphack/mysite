@@ -1,63 +1,113 @@
 body {
-	vertical-align: center;
 	background: white;
 	font-family: sans-serif;
-	margin-left: 1%;
-	margin-right: 1%;
-}
-
-h1 {
-	color: black;
-	border-bottom: 1px solid black
-}
-
-h2 {
-	color: black;
-	font-weight: bold;
-	line-height: 0px;
+	font-size: 16px;
+	min-width: 1024px;
 }
 
 p {
 	color: green;
-	width: 100%;
+	font-weight: bold;
+	word-wrap:break-word;
 }
 
-.green {
-	color: green;
+ul {
+	padding: 0px;
+	margin: 0px;
 }
 
-.yellow {
-	color: yellow;
-}
-
-.white {
-	color: white;
-}
-
-.title {
+.top {
 	text-align: center;
 	margin: 0 auto;
 }
 
-.catalog {
-	float: left;
-	width: 20%;
-	margin: 0;
-	padding: 0;
-	background: gray;
+.top h1 {
+	border-bottom: 1px solid black
 }
 
-.section {
-	position: absolute;
-	left: 22%;
-	width: 40%;
-	border: 1px dotted gray;
-	padding: 10px 10px 10px 10px;
-	background: red;
+.middle {
+	margin-left: 5%;
+	margin-right: 5%;
+	background-image: url(../images/timg.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	overflow:auto;
+	overflow-x: auto;
+	overflow-y: auto;
+	min-height: 768px;
+	min-width: 1024px;
 }
 
 .search {
-	float: right;
-	background: blue;
+	width: 250px;
 }
 
+.search input {
+	width: 120 px;
+}
+
+.main {
+	margin-top: 20px;
+}
+
+.catalog {
+	float: left;
+	width: 200px;
+	word-wrap:break-word;
+	margin-left: 5px;
+	margin-right: 5px;
+	border: thin dotted red;
+}
+
+.section {
+	float: left;
+	position: relative;
+	width: calc(95% - 350px);
+	word-wrap:break-word;
+	padding: 5px;
+	border: thin solid #888888;
+}
+
+.section p {
+	width: 100%;
+	line-height: 160%;
+}
+
+.history {
+	float: right;
+	position: relative;
+	width: 150px;
+	word-wrap:break-word;
+	border: thin dotted red;
+}
+
+.history h4 {
+	text-align: center;
+}
+
+
+.bottom {
+	text-align: center;
+}
+
+.bottom h5 {
+	border-top: 1px solid black
+}
+
+a {
+	color: #458756;
+}
+/*未访问*/
+a:link {
+	color: green;
+}
+
+/*已访问*/
+a:visited {
+	color: red;
+}
+
+/*鼠标停留*/
+a:hover {
+	color: yellow;
+}

@@ -1,0 +1,29 @@
+/*表单*/
+
+table {
+	caption-side: bottom;
+	border-spacing: 5px 6px;
+	border-collapse: collapse;
+}
+
+caption
+/*表单标题位置*/
+caption-side : {
+	bottom,
+	top,
+	left,
+	right,
+}
+
+/*边框间距*/
+border-spacing : {
+	5px,
+	5px 6px; /*水平 垂直*/
+}
+
+/*相邻边框的间距是否合并*/
+border-collapse: {
+	collapse, /*合并*/
+	separate; /*分离*/
+}
+

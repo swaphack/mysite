@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/html.login.css">
+</head>
+
+<body>
+    <form action="../" method="get">
+        <div>
+            Name:
+            <input type="text" name="name" maxlength="20" />
+        </div>
+        <div>
+            Password:
+            <input type="password" name="pwd" minlength="8" />
+        </div>
+        <div>
+            Confirm:
+            <input type="password" name="confirm-pwd" minlength="8" />
+        </div>
+        <div>
+        	Gender:
+        	<select name="gender">
+        		<option value="male">male</option>
+        		<option value="female">female</option>
+        	</select>
+        </div>
+        <div>
+        	Preferences:
+        	<select name="preferences" multiple="multiple">
+        		<option value="vegetables">vegetables</option>
+        		<option value="meat">meat</option>
+        		<option value="water">water</option>
+        	</select>
+        </div>
+        <div>
+        	<fieldset>
+        		<legend>Education</legend>
+        		<input type="radio" name="edu" value="primary" />
+        		<input type="radio" name="edu" value="middle" />
+        		<input type="radio" name="edu" value="high" />
+        	</fieldset>
+        </div>
+         <div>
+        	<input type="file" name="doc"/>
+        </div>
+        <div>
+        	<textarea name="comments" rows="3" cols="30"></textarea>
+        </div>
+        <div id="btn">
+            <input type="submit" />
+            <input type="reset" />
+        </div>
+    </form>
+</body>
+
+</html>

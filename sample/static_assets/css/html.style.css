@@ -1,0 +1,19 @@
+div {
+	border-width: thin;
+	border-color: black;
+	border-style: solid;
+}
+
+.left {
+	float: left;
+	position: absolute;
+	left: 0;
+	width: 50%;
+}
+
+.right {
+	float: right;
+	position: absolute;
+	right: 0;
+	width: 50%;
+}

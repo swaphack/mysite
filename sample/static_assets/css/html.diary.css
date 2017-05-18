@@ -1,0 +1,53 @@
+body {
+	vertical-align: center;
+	min-width: 1024px;
+}
+
+.header {
+	border: 1px solid red;
+	height: 100px;
+	width: 100%;
+}
+
+.name {
+	float: left;
+	position: relative;
+	width: 80%;
+	text-align: center;
+}
+
+.contact {
+	float: right;
+	position: relative;
+	right: 0px;
+	width: 20%;
+	text-align: right;
+}
+
+.main {
+}
+
+.record {
+	border: thin solid;
+}
+
+.content {
+   
+}
+
+.content-img {
+	min-height: 187px;
+	margin: 15px 0;
+}
+
+.text {
+	width: 768px;
+}
+
+.picture {
+	text-align: center;
+	float: right;
+	position: relative;
+	right: 0px;
+	border: 1px solid red;
+}

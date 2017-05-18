@@ -1,0 +1,13 @@
+form {
+	float: left;
+	position: absolute;
+}
+
+input {
+	border-width: 1px;
+	border-left-width: 2px;	
+}
+
+#btn {
+	text-align: center;
+}
