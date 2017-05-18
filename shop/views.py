@@ -5,7 +5,7 @@ from shop.manage.HTTPActor import get_http_actor
 
 # 处理
 def index(request):
-	init_server(request)
+	init_server()
 	return get_http_actor().hand(request)
 
 
