@@ -125,3 +125,7 @@ alt和title
 
 私有
 <meta name="robots" content="noindex,nofollow" />
+
+-------------------------------------------------------------
+@import url（style.css）css的路径要和本来css路径一致，如果不是在同一目录下，那么就在url后面写入相应的路径了
+@import "1.css"
