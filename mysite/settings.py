@@ -162,3 +162,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads').replace('\\', '/')
 #TEMPLATES_DIRS = (
 #   os.path.join(BASE_DIR, 'templates').replace('\\', '/')
 #)
+
+print ("static root %s" % STATIC_ROOT)

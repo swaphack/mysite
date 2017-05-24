@@ -2,6 +2,7 @@
 
 from shop.manage.Actor import ShopActor
 from mysite.settings import STATIC_URL
+from shop.models import Mommodity
 
 # 商品操作处理
 MOMMODITY_OPERATOR_MARK = 'mommodity'
@@ -27,12 +28,17 @@ class MommodityActor(ShopActor):
 		varList = []
 		for item in items:
 			var = {}
-			var['href'] = '?%s=%s&id=%d' % (MOMMODITY_OPERATOR_MARK, MOMMODITY_OPERATOR_ITEM_INFO[1], item.id)
-			var['url'] = ('%s%s') % (STATIC_URL,item.piture)
+			var['id'] = item.id
+			var['piture'] = item.piture
+			var['name'] = item.name
+			var['price'] = item.price
+			var['detail'] = item.detail
 			varList.append(var)
 
-		context = {'items' : varList}
-		url = 'shop/mommodity_list.html'
+		context = {
+			'items' : varList,
+		}
+		url = 'mommodity/mommodity_list.html'
 		return self.flush_html(request, url, context)
 
 	#显示物品信息
@@ -47,7 +53,7 @@ class MommodityActor(ShopActor):
 			return None
 
 		context = {'item' : items[0]}
-		url = 'shop/mommodity_info.html'
+		url = 'mommodity/mommodity_info.html'
 		return self.flush_html(request, url, context)
 
 ########################################################################

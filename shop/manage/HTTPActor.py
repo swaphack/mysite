@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 from shop.manage.Actor import ShopActor
 
 from shop.manage.AccountActor import get_account_actor
@@ -28,15 +27,15 @@ class HTTPActor(ShopActor):
 
 	# 派发商品处理
 	def disatch_mommodity(self, request):
-		get_mommodity_actor().hand(request)
+		return get_mommodity_actor().hand(request)
 
 	# 派发账号处理
 	def dispatch_account(self, request):
-		get_account_actor().hand(request)
+		return get_account_actor().hand(request)
 
 	# 派发订单处理
 	def dispatch_order(self, request):
-		get_order_actor().hand(request)
+		return get_order_actor().hand(request)
 
 ########################################################################
 global __http_actor

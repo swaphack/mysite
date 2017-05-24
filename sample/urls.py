@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sample.views
 import os
 
@@ -11,7 +13,6 @@ SAMPLE_STATIC_ROOT = os.path.join(BASE_DIR, 'sample/static_assets')
 
 def sample_urlpatterns():
 	patterns = [
-		url(r'^sample/static/(?P<path>.*)$', serve, {'document_root' : STATIC_ROOT}),
 		url(r'^sample/?$', sample.views.index),
 		url(r'^sample/(?P<path>.*)$', serve, {'document_root' : SAMPLE_STATIC_ROOT}),
 	]
