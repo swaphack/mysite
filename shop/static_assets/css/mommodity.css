@@ -4,48 +4,70 @@ body {
 	padding: 0px;
 }
 
-.header,
-.content,
-.footer {
-	background-position: center;
+.left,
+.right {
+	float: left;
+	position: relative;
+	background-position: left center;
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
+	left: 0px;
+	width: 10%;
+}
+
+
+.left {
+	background-image: url(../images/65b4080d385dbe552f8600cb3a0abdc4.jpg);
+}
+
+.content {
+	float: left;
+	position: relative;
+	min-width: 600px;
+	left: 0px;
+	width: 80%;
 	font-size: 125%;
 }
 
+.right {
+	background-image: url(../images/65b4080d385dbe552f8600cb3a0abdc4.jpg);
+	transform:scaleX(-1);
+}
+
+/**/
+.header,
+.middle,
+.footer {
+	margin:0px;
+	padding: 0px;
+}
+
 .header {
-	min-height: 100px;
+	height: 100px;
 	width: 100%;
 	background-color: gray;
 }
 
-.content {
-	min-height: 768px;
-}
-
 .footer {
-	height: 300px;
+	height: 200px;
+	width: 100%;
 	background-image: url(../images/ee57c2ad933aabb5f0030e7ade8a5308.jpg);
 }
 
-.left, 
-.middle, 
-.right {
-	margin: 0px;
-	border: 0px dashed #455821;
-	float: left;
-	position: relative;
-	left: 0px;
-	min-height: 768px;
-}
-
-.left {
-	width: 10%;
-	background-image: url(../images/65b4080d385dbe552f8600cb3a0abdc4.jpg);
-}
-
 .middle {
-	width: 80%;
+	min-height: calc(100% - 400px);
+	height: 60%;
+	width: 100%;
+}
+
+/**/
+.item_page {
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 10px;
 }
 
 .middle hr {
@@ -54,22 +76,13 @@ body {
 	padding: 0px;
 }
 
-.right {
-	width: 10%;
-	background-image: url(../images/65b4080d385dbe552f8600cb3a0abdc4.jpg);
-	transform:scaleX(-1);
-}
-
-.item_snapshot {
-}
-
-.item_page {
+.item_list {
+	min-height: 600px;
+	height: calc(100% - 55px);
 	width: 100%;
-	height: 50px;
-	margin: 0px;
-	padding: 0px;
 }
 
+/**/
 .item_nav,
 .item_nav ul {
 	padding: 0px;
@@ -78,25 +91,7 @@ body {
 
 .item_nav {
 	float: left;
-	position: relative;
-}
-
-.item_find {
-	float: right;
-	position: relative;
-	right: 5px;
-}
-
-.item_find button {
-	float: right;
-	position: relative;
-	right: 5px;
-}
-
-.item_find input {
-	float: right;
-	position: relative;
-	right: 15px;
+	position: relative;  
 }
 
 .item_nav ul {
@@ -118,17 +113,30 @@ body {
 	border-right: 1px;
 }
 
+.item_find {
+	float: right;
+	position: relative;
+	width: 325px;
+	right: 5px;
+}
+
+.item_find button {
+	float: right;
+	position: relative;
+	right: 5px;
+}
+
+.item_find input {
+	float: right;
+	position: relative;
+	right: 15px;
+}
+
+/**/
 .item_bar {
 	padding: 0px;
 	margin: 0px;
 	border: 0px dashed #455821;
-}
-
-.item_group {
-	height: 250px;
-}
-
-.item_bar {
 	float: left;
 	width: 33.3%;
 	height: 288px;

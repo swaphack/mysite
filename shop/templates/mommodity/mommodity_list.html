@@ -3,29 +3,29 @@
 
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/mommodity.css">
     <link rel="stylesheet" type="text/css" href="css/other.css">
+    <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/shop.js"></script>
 </head>
 
 <body>
-    <div class="header"></div>
+    <div class="left"></div>
     <div class="content">
-        <div class="left"></div>
+        <div class="header"></div>
         <div class="middle">
             <div class="item_page">
-            	<div class="item_nav">
-            		<ul>
-            			<li><a href="#">销量</a></li>
-            			<li><a href="#">新品</a></li>
-            			<li><a href="#">评价</a></li>
-            		</ul>
-            	</div>
-            	<div class="item_find">
-            		<button type="button" name="" onclick="search()">搜索</button>
-            		<input type="text" id="search_key"></input>
-            	</div>
+                <div class="item_nav">
+                    <ul>
+                        <li><a href="#">销量</a></li>
+                        <li><a href="#">新品</a></li>
+                        <li><a href="#">评价</a></li>
+                    </ul>
+                </div>
+                <div class="item_find">
+                    <button id="search" type="button" name="">搜索</button>
+                    <input id="search_key" type="text" ></input>
+                </div>
             </div>
             <hr/>
             <div class="item_list">
@@ -33,18 +33,17 @@
                 <div class="item_bar">
                     <div class="item_snapshot">
                         <div class="item_img">
-                            <img src="{{ item.piture }}" />
+                            <a class="item_url" itemId="{{item.id}}">
+                                <img src="{{ item.piture }}" />
+                            </a>
                         </div>
+                        <!--
                         <div class="item_desc">
                             <div>
                                 {{item.detail}}
                             </div>
-                            <div>
-                                <a href="javascript:showItemDetail({{item.id}})">
-                            	查看
-                    		</a>
-                            </div>
                         </div>
+                         -->
                     </div>
                     <div class="item_shop">
                         <div class="item_name">
@@ -53,17 +52,15 @@
                         <div class="item_price">
                             {{item.price}}
                         </div>
-                        <div class="item_visit">
-                            <button type="button" onclick="showItemDetail({{item.id}})">查看</button>
-                        </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
+            <hr/>
         </div>
-        <div class="right"></div>
+        <div class="footer"></div>
     </div>
-    <div class="footer">
-    </div>
+    <div class="right"></div>
 </body>
+    <script type="text/javascript" src="js/mommodity.js"></script>
 </html>
